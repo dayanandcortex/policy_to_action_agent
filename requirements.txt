@@ -1,0 +1,8 @@
+langgraph
+langchain
+langchain-ollama
+python-dotenv
+pydantic
+pypdf
+streamlit
+openai
