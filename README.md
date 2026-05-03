@@ -1,8 +1,8 @@
-# 🧠 Policy-to-Action Agent
+# Policy-to-Action Agent
 
 An end-to-end autonomous AI agent system that converts unstructured policy documents (PDF/TXT/MD) into structured rules, verified decisions, and actionable insights using LLMs.
 
-## 🚀 Overview
+## Overview
 
 This project builds a multi-agent pipeline that:
 - Reads policy documents
@@ -11,30 +11,60 @@ This project builds a multi-agent pipeline that:
 - Generates decisions
 - Critiques and refines outputs
 
-## 🏗️ Architecture
+## Architecture
 
 High-Level Flow:
 
-Input → Reader → Classifier → Extractor → Verifier → Decision → Critic
+Input -> Reader -> Classifier -> Extractor -> Verifier -> Decision -> Critic
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 policy_to_action_agent/
-├── app/
-│   ├── agents/
-│   ├── ui/
-│   ├── config.py
-│   ├── graph.py
-│   ├── schemas.py
-│   ├── state.py
-│   └── utils.py
-├── run.py
-├── .env
-└── README.md
+|-- README.md
+|-- requirements.txt
+|-- run.py
+|-- .env
+|-- app/
+|   |-- __init__.py
+|   |-- config.py
+|   |-- graph.py
+|   |-- main.py
+|   |-- schemas.py
+|   |-- state.py
+|   |-- utils.py
+|   |-- agents/
+|   |   |-- __init__.py
+|   |   |-- classifier_agent.py
+|   |   |-- critic_agent.py
+|   |   |-- decision_agent.py
+|   |   |-- extractor_agent.py
+|   |   |-- reader_agent.py
+|   |   `-- verifier_agent.py
+|   |-- data/
+|   |   |-- final-sbc-and-clfs-from-naic.pdf
+|   |   |-- policy_analysis_result.json
+|   |   `-- sample_policy.txt
+|   |-- eval/
+|   |   |-- __init__.py
+|   |   |-- baseline_agent.py
+|   |   |-- run_evaluation.py
+|   |   `-- scoring.py
+|   |-- tools/
+|   |   |-- __init__.py
+|   |   |-- chunkers.py
+|   |   `-- file_loader.py
+|   `-- ui/
+|       |-- dayan.json
+|       `-- streamlit_app.py
+`-- outputs/
+    `-- eval/
+        |-- baseline_result.json
+        |-- comparison_report.json
+        `-- multi_agent_result.json
 ```
 
-## ⚙️ Setup
+## Setup
 
 ```bash
 conda create -n p2a python=3.11
@@ -42,13 +72,13 @@ conda activate p2a
 pip install -r requirements.txt
 ```
 
-## ▶️ Run
+## Run
 
 ```bash
 streamlit run app/ui/streamlit_app.py
 ```
 
-## 📊 Output
+## Output
 
 Returns structured JSON with:
 - document_type
