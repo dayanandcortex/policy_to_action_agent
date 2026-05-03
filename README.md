@@ -19,6 +19,7 @@ Input → Reader → Classifier → Extractor → Verifier → Decision → Crit
 
 ## 📂 Project Structure
 
+```
 policy_to_action_agent/
 ├── app/
 │   ├── agents/
@@ -31,16 +32,21 @@ policy_to_action_agent/
 ├── run.py
 ├── .env
 └── README.md
+```
 
 ## ⚙️ Setup
 
+```bash
 conda create -n p2a python=3.11
 conda activate p2a
 pip install -r requirements.txt
+```
 
 ## ▶️ Run
 
+```bash
 streamlit run app/ui/streamlit_app.py
+```
 
 ## 📊 Output
 
@@ -51,3 +57,19 @@ Returns structured JSON with:
 - final_decision
 - confidence
 
+## Evaluation
+
+Compare the multi-agent pipeline against a one-shot LLM baseline:
+
+```bash
+python -m app.eval.run_evaluation app/data/final-sbc-and-clfs-from-naic.pdf
+```
+
+The evaluation writes:
+- `outputs/eval/multi_agent_result.json`
+- `outputs/eval/baseline_result.json`
+- `outputs/eval/comparison_report.json`
+
+The comparison report includes quantitative metrics such as extracted rule count,
+supported verified rule count, support rate, evidence coverage, page-number
+coverage, average confidence, runtime, and a short qualitative summary.

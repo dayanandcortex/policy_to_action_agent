@@ -1,0 +1,569 @@
+{
+  "document_type": "health_insurance_policy",
+  "extracted_entities": {
+    "insurance_company": "Insurance Company 1",
+    "plan_name": "PPO Plan 1",
+    "policy_period": "1/1/2011 \u2013 12/31/2011",
+    "coverage_type": "Individual + Spouse",
+    "plan_type": "PPO",
+    "contact_phone": "1-800-XXX-XXXX",
+    "contact_website": "www.insurancecompany.com",
+    "policy_document_url": "www.insurancecompany.com/PLAN1500",
+    "premium": "$481 monthly",
+    "overall_deductible": "$2,500 person / $7,500 family",
+    "other_deductibles": [
+      "$300 for pharmacy expenses"
+    ],
+    "out_of_pocket_limit": "$2,500 person / $7,500 family",
+    "excluded_from_out_of_pocket_limit": [
+      "Co-payments",
+      "premium",
+      "balance-billed charges",
+      "prescription drugs",
+      "health care this plan doesn\u2019t cover"
+    ],
+    "overall_annual_limit": "No",
+    "network_required": "Yes",
+    "referral_required_for_specialist": "No",
+    "excluded_services_section": "Excluded Services & Other Covered Services",
+    "glossary_reference": "www.insuranceterms.gov",
+    "covered_services": [
+      "Primary care visit",
+      "Specialist visit",
+      "Other practitioner office visit",
+      "Preventive care/screening/immunization",
+      "Diagnostic test",
+      "Imaging",
+      "Generic drugs",
+      "Preferred brand drugs",
+      "Non-preferred brand drugs",
+      "Specialty drugs"
+    ],
+    "cost_sharing_types": [
+      "Co-payments",
+      "Co-insurance",
+      "Deductible"
+    ],
+    "provider_types": [
+      "Participating Provider",
+      "Non-Participating Provider"
+    ],
+    "other_practitioners": [
+      "chiropractor",
+      "acupuncture"
+    ],
+    "imaging_types": [
+      "CT/PET scans",
+      "MRIs"
+    ],
+    "drug_types": [
+      "Generic drugs",
+      "Preferred brand drugs",
+      "Non-preferred brand drugs",
+      "Specialty drugs"
+    ],
+    "drug_supply_limits": [
+      "30-day supply (retail prescription)",
+      "31-90 day supply (mail order prescription)"
+    ],
+    "coverage_for": "Individual + Spouse",
+    "website": "www.insurancecompany.com",
+    "glossary_url": "www.insuranceterms.gov",
+    "excluded_services": [
+      "Bariatric surgery",
+      "Non-emergency care when traveling outside the U.S.",
+      "Cosmetic surgery",
+      "Dental care (Adult)",
+      "Infertility treatment",
+      "Long-term care",
+      "Private-duty nursing",
+      "Routine eye care (Adult)",
+      "Routine foot care",
+      "Routine hearing tests",
+      "Weight loss programs"
+    ],
+    "other_covered_services": [
+      "Acupuncture",
+      "Chiropractic care",
+      "Hearing aids"
+    ],
+    "coverage_termination_triggers": [
+      "you commit fraud",
+      "the insurer stops offering services in the state",
+      "you move outside the coverage area"
+    ],
+    "grievance_contact": "1-800-XXX-XXXX or visit www. Xxxxxxxxxxxxxx.com",
+    "appeals_contact": "1-800-XXX-XXXX or visit www. Xxxxxxxxxxxxxx.gov",
+    "covered_conditions_examples": [
+      "Having a baby (normal delivery)",
+      "Treating breast cancer (lumpectomy, chemotherapy, radiation)",
+      "Managing diabetes (routine maintenance of existing condition)"
+    ],
+    "cost_categories": [
+      "Deductibles",
+      "Co-pays",
+      "Co-insurance",
+      "Limits or exclusions"
+    ],
+    "assumptions": [
+      "Costs don't include premiums",
+      "Sample care costs are based on national averages supplied to HHS",
+      "Patient's condition was not an excluded or preexisting condition",
+      "All services and treatments started and ended in the same policy period",
+      "There are no other medical expenses for any member covered under this plan",
+      "The patient received all care from in-network providers"
+    ],
+    "comparison_guidance": [
+      "Check the 'You Pay' box for each example",
+      "Consider premium costs",
+      "Consider contributions to HSAs, FSAs, or HRAs"
+    ],
+    "policy_url": "www.insurancecompany.com/PLAN1500",
+    "exclusions_section": "Excluded Services & Other Covered Services",
+    "coverage_examples": [
+      "Having a baby (normal delivery)",
+      "Treating breast cancer (lumpectomy, chemotherapy, radiation)",
+      "Managing diabetes (routine maintenance of existing condition)"
+    ],
+    "exclusions": [
+      "maternity"
+    ],
+    "covered_items": [
+      "Office visits & procedures",
+      "Radiology",
+      "Laboratory tests",
+      "Hospital charges",
+      "Inpatient medical care",
+      "Outpatient surgery",
+      "Chemotherapy",
+      "Radiation therapy",
+      "Prostheses (wig)",
+      "Pharmacy",
+      "Mental health",
+      "Medical equipment & supplies"
+    ],
+    "cost_components": [
+      "Deductibles",
+      "Co-pays",
+      "Co-insurance",
+      "Limits or exclusions"
+    ]
+  },
+  "verified_rules": [
+    {
+      "condition": "Member pays costs up to the overall deductible amount",
+      "action": "Plan begins to pay for covered services",
+      "exception": "Doesn\u2019t apply to preventive care",
+      "evidence": "You must pay all the costs up to the deductible amount before this health insurance plan begins to pay for covered services you use.",
+      "page_number": 2,
+      "supported": true,
+      "support_reason": "Direct quote from page 2 clearly states the deductible requirement and preventive care exception.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Member pays costs up to the specific deductible amount for pharmacy expenses",
+      "action": "Plan begins to pay for pharmacy services",
+      "exception": null,
+      "evidence": "You must pay all of the costs for these services up to the specific deductible amount before this plan begins to pay for these services.",
+      "page_number": 2,
+      "supported": true,
+      "support_reason": "Direct quote from page 2 confirms specific deductible for pharmacy expenses.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Member reaches out-of-pocket limit during policy period",
+      "action": "Plan pays all remaining costs for covered services (subject to exclusions)",
+      "exception": "Co-payments, premium, balance-billed charges, prescription drugs, and health care this plan doesn\u2019t cover don't count toward limit",
+      "evidence": "The out-of-pocket limit is the most you could pay during a policy period for your share of the cost of covered services.",
+      "page_number": 2,
+      "supported": true,
+      "support_reason": "Definition of out-of-pocket limit is clearly stated, and exclusions are listed in the same section.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Member uses in-network provider",
+      "action": "Plan pays some or all costs of covered services",
+      "exception": null,
+      "evidence": "If you use an in-network doctor or other health care provider, this plan will pay some or all of the costs of covered services.",
+      "page_number": 2,
+      "supported": true,
+      "support_reason": "Direct quote from page 2 confirms in-network provider benefit.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Member wants to see a specialist",
+      "action": "Member can see specialist without permission",
+      "exception": null,
+      "evidence": "You don\u2019t need a referral to see a specialist You can see the specialist you choose without permission from this plan.",
+      "page_number": 2,
+      "supported": true,
+      "support_reason": "Direct quote from page 2 confirms no referral requirement.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "If you visit a health care provider's office or clinic for primary care to treat an injury or illness",
+      "action": "Pay $35 co-pay/visit for participating provider, 40% co-insurance for non-participating provider",
+      "exception": "none",
+      "evidence": "Primary care visit to treat an injury or illness $35 co-pay/visit  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Cost table on page 3 clearly shows these amounts for primary care visits.",
+      "confidence": 0.95
+    },
+    {
+      "condition": "If you visit a specialist",
+      "action": "Pay $50 co-pay/visit for participating provider, 40% co-insurance for non-participating provider",
+      "exception": "none",
+      "evidence": "Specialist visit $50 co-pay/visit  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Cost table on page 3 clearly shows these amounts for specialist visits.",
+      "confidence": 0.95
+    },
+    {
+      "condition": "If you visit other practitioners (chiropractor and acupuncture)",
+      "action": "Pay 20% co-insurance for participating provider, 40% co-insurance for non-participating provider",
+      "exception": "none",
+      "evidence": "Other practitioner office visit 20% co-insurance for chiropractor and acupuncture 40% co-insurance for chiropractor and acupuncture \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Cost table on page 3 clearly shows these amounts for chiropractor and acupuncture.",
+      "confidence": 0.95
+    },
+    {
+      "condition": "If you receive preventive care/screening/immunization",
+      "action": "Pay $0 for participating provider, 40% co-insurance for non-participating provider",
+      "exception": "none",
+      "evidence": "Preventive care/screening/immunization $0  40% co-insurance",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Cost table on page 3 clearly shows these amounts for preventive care.",
+      "confidence": 0.95
+    },
+    {
+      "condition": "If you have a diagnostic test (x-ray, blood work)",
+      "action": "Pay 0% co-insurance for participating provider, 40% co-insurance for non-participating provider",
+      "exception": "none",
+      "evidence": "Diagnostic test (x-ray, blood work)  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Cost table on page 3 clearly shows these amounts for diagnostic tests.",
+      "confidence": 0.95
+    },
+    {
+      "condition": "If you have imaging (CT/PET scans, MRIs)",
+      "action": "Pay 0% co-insurance for participating provider, 40% co-insurance for non-participating provider",
+      "exception": "none",
+      "evidence": "Imaging (CT/PET scans, MRIs)   0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Cost table on page 3 clearly shows these amounts for imaging.",
+      "confidence": 0.95
+    },
+    {
+      "condition": "If you need generic drugs",
+      "action": "Pay $10 co-pay (retail) or $10 co-pay (mail order) for participating provider, 40% co-insurance for non-participating provider",
+      "exception": "Covers up to a 30-day supply (retail prescription); 31-90 day supply (mail order prescription)",
+      "evidence": "Generic drugs $10 co-pay (retail); $10 co-pay (mail order) 40% co-insurance Covers up to a 30-day supply (retail prescription); 31-90 day supply (mail order prescription)",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Cost table on page 3 clearly shows these amounts and limitations for generic drugs.",
+      "confidence": 0.95
+    },
+    {
+      "condition": "If you need preferred brand drugs",
+      "action": "Pay 20% co-insurance (retail and mail order) for participating provider, 40% co-insurance for non-participating provider",
+      "exception": "none",
+      "evidence": "Preferred brand drugs 20% co-insurance (retail and mail order) 40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Cost table on page 3 clearly shows these amounts for preferred brand drugs.",
+      "confidence": 0.95
+    },
+    {
+      "condition": "If you need non-preferred brand drugs",
+      "action": "Pay 40% co-insurance (retail and mail order) for participating provider, 60% co-insurance for non-participating provider",
+      "exception": "none",
+      "evidence": "Non-preferred brand drugs 40% co-insurance (retail and mail order) 60% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Cost table on page 3 clearly shows these amounts for non-preferred brand drugs.",
+      "confidence": 0.95
+    },
+    {
+      "condition": "If you need specialty drugs (e.g., chemotherapy)",
+      "action": "Pay 0% co-insurance for participating provider",
+      "exception": "none",
+      "evidence": "Specialty drugs (e.g., chemotherapy)  0% co-insurance  \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Cost table on page 3 clearly shows 0% co-insurance for specialty drugs from participating providers.",
+      "confidence": 0.9
+    },
+    {
+      "condition": "If an out-of-network provider charges more than the allowed amount",
+      "action": "You may have to pay the difference (balance billing)",
+      "exception": null,
+      "evidence": "If an out-of-network provider charges more than the allowed amount, you may have to pay the difference. For example, if an out-of-network hospital charges $1,500 for an overnight stay and the allowed amount is $1,000, you may have to pay the $500 difference. (This is called balance billing.)",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Direct quote from page 3 explains balance billing for out-of-network providers.",
+      "confidence": 0.95
+    },
+    {
+      "condition": "If you use participating providers",
+      "action": "You are charged lower deductibles, co-payments and co-insurance amounts",
+      "exception": null,
+      "evidence": "This plan may encourage you to use participating providers by charging you lower deductibles, co-payments and co-insurance amounts.",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Direct quote from page 3 confirms lower costs for participating providers.",
+      "confidence": 0.9
+    },
+    {
+      "condition": "If you have outpatient surgery and use a Participating Provider",
+      "action": "Facility fee: 0% co-insurance, Physician/surgeon fees: 0% co-insurance",
+      "exception": null,
+      "evidence": "Facility fee (e.g., ambulatory surgery center)  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Physician/surgeon fees  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Cost table on page 4 clearly shows 0% co-insurance for outpatient surgery with participating providers.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "If you have outpatient surgery and use a Non-Participating Provider",
+      "action": "Facility fee: 40% co-insurance, Physician/surgeon fees: 40% co-insurance",
+      "exception": null,
+      "evidence": "Facility fee (e.g., ambulatory surgery center)  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Physician/surgeon fees  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Cost table on page 4 clearly shows 40% co-insurance for outpatient surgery with non-participating providers.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "If you need immediate medical attention and use a Participating Provider",
+      "action": "Emergency room services: 0% co-insurance, Emergency medical transportation: 0% co-insurance, Urgent care: 0% co-insurance",
+      "exception": null,
+      "evidence": "Emergency room services  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Emergency medical transportation  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Urgent care  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Cost table on page 4 clearly shows 0% co-insurance for emergency services with participating providers.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "If you need immediate medical attention and use a Non-Participating Provider",
+      "action": "Emergency room services: 40% co-insurance, Emergency medical transportation: 40% co-insurance, Urgent care: 40% co-insurance",
+      "exception": null,
+      "evidence": "Emergency room services  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Emergency medical transportation  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Urgent care  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Cost table on page 4 clearly shows 40% co-insurance for emergency services with non-participating providers.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "If you have a hospital stay and use a Participating Provider",
+      "action": "Facility fee: 0% co-insurance, Physician/surgeon fee: 0% co-insurance",
+      "exception": null,
+      "evidence": "Facility fee (e.g., hospital room)  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Physician/surgeon fee  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Cost table on page 4 clearly shows 0% co-insurance for hospital stays with participating providers.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "If you have a hospital stay and use a Non-Participating Provider",
+      "action": "Facility fee: 40% co-insurance, Physician/surgeon fee: 40% co-insurance",
+      "exception": null,
+      "evidence": "Facility fee (e.g., hospital room)  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Physician/surgeon fee  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Cost table on page 4 clearly shows 40% co-insurance for hospital stays with non-participating providers.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "If you have mental/behavioral health outpatient services and use a Participating Provider",
+      "action": "0% co-insurance",
+      "exception": "After 8 visits, not covered",
+      "evidence": "Mental/Behavioral health outpatient services  0% co-insurance  40% co-insurance After 8 visits, not covered.",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Cost table on page 4 clearly shows 0% co-insurance with 8-visit limit for participating providers.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "If you have mental/behavioral health outpatient services and use a Non-Participating Provider",
+      "action": "40% co-insurance",
+      "exception": "After 8 visits, not covered",
+      "evidence": "Mental/Behavioral health outpatient services  0% co-insurance  40% co-insurance After 8 visits, not covered.",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Cost table on page 4 clearly shows 40% co-insurance with 8-visit limit for non-participating providers.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "If you become pregnant",
+      "action": "Prenatal and postnatal care: Not Covered, Delivery and all inpatient services: Not Covered",
+      "exception": null,
+      "evidence": "Prenatal and postnatal care Not Covered Not Covered \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Delivery and all inpatient services Not Covered Not Covered \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Cost table on page 4 clearly shows maternity services are not covered.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "If you have a recovery or other special health need and use a Participating Provider",
+      "action": "Home health care: 0% co-insurance, Rehabilitation services: 0% co-insurance, Habilitation services: 0% co-insurance, Skilled nursing care: 0% co-insurance, Durable medical equipment: 0% co-insurance, Hospital service: 0% co-insurance",
+      "exception": null,
+      "evidence": "Home health care  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Rehabilitation services  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Habilitation services  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Skilled nursing care  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Durable medical equipment  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Hospital service  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Cost table on page 4 clearly shows 0% co-insurance for recovery services with participating providers.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "If you have a recovery or other special health need and use a Non-Participating Provider",
+      "action": "Home health care: 40% co-insurance, Rehabilitation services: 40% co-insurance, Habilitation services: 40% co-insurance, Skilled nursing care: 40% co-insurance, Durable medical equipment: 40% co-insurance, Hospital service: 40% co-insurance",
+      "exception": null,
+      "evidence": "Home health care  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Rehabilitation services  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Habilitation services  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Skilled nursing care  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Durable medical equipment  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Hospital service  0% co-insurance  40% co-insurance \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Cost table on page 4 clearly shows 40% co-insurance for recovery services with non-participating providers.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "If your child needs dental or eye care",
+      "action": "Eye exam: Not Covered, Glasses: Not Covered, Dental check-up: Not Covered",
+      "exception": null,
+      "evidence": "Eye exam Not Covered Not Covered \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Glasses Not Covered Not Covered \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Dental check-up Not Covered Not Covered \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013none\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Cost table on page 4 clearly shows child dental and eye care are not covered.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "You can keep this insurance as long as you pay your premium",
+      "action": "Coverage continues",
+      "exception": "unless one or more of the following happens: you commit fraud, the insurer stops offering services in the state, you move outside the coverage area",
+      "evidence": "You can keep this insurance as long as you pay your premium unless one or more of the following happens: \uf0b7 you commit fraud \uf0b7 the insurer stops offering services in the state \uf0b7 you move outside the coverage area",
+      "page_number": 5,
+      "supported": true,
+      "support_reason": "Direct quote from page 5 confirms continuation rights and exceptions.",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient receives maternity care (normal delivery)",
+      "action": "Plan pays $0, patient pays 100% of costs",
+      "exception": null,
+      "evidence": "maternity is not covered, so you pay 100%",
+      "page_number": 6,
+      "supported": true,
+      "support_reason": "Coverage example on page 6 clearly states maternity is not covered and patient pays 100%.",
+      "confidence": 0.95
+    },
+    {
+      "condition": "Patient receives treatment for breast cancer (lumpectomy, chemotherapy, radiation)",
+      "action": "Plan pays $94,800, patient pays $3,200 (including $2,500 deductible, $200 co-pays, $500 limits/exclusions)",
+      "exception": null,
+      "evidence": "Amount owed to providers: $98,000. Plan pays $94,800. You pay $3,200",
+      "page_number": 6,
+      "supported": true,
+      "support_reason": "Coverage example on page 6 shows specific payment amounts for breast cancer treatment.",
+      "confidence": 0.9
+    },
+    {
+      "condition": "Patient receives routine maintenance for existing diabetes condition",
+      "action": "Plan pays $6,800, patient pays $1,000 (including $300 deductible, $260 co-pays, $400 co-insurance, $40 limits/exclusions)",
+      "exception": null,
+      "evidence": "Amount owed to providers: $7,800. Plan pays $6,800. You pay $1,000",
+      "page_number": 6,
+      "supported": true,
+      "support_reason": "Coverage example on page 6 shows specific payment amounts for diabetes management.",
+      "confidence": 0.9
+    },
+    {
+      "condition": "Patient receives all care from in-network providers",
+      "action": "Costs are as shown in coverage examples",
+      "exception": "If patient receives care from out-of-network providers, costs would have been higher",
+      "evidence": "The patient received all care from in-network providers. If the patient had received care from out-of-network providers, costs would have been higher",
+      "page_number": 7,
+      "supported": true,
+      "support_reason": "Direct quote from page 7 confirms coverage examples assume in-network care and higher costs for out-of-network.",
+      "confidence": 0.95
+    },
+    {
+      "condition": "Using coverage examples to compare plans",
+      "action": "Check the 'You Pay' box for each example - smaller number indicates more coverage",
+      "exception": null,
+      "evidence": "When you compare plans, check the 'You Pay' box for each example. The smaller that number, the more coverage the plan provides",
+      "page_number": 7,
+      "supported": false,
+      "support_reason": "The quoted text does not appear in the provided document. Page 7 ends mid-sentence and does not contain this specific guidance.",
+      "confidence": 0.0
+    }
+  ],
+  "ambiguities": [
+    "Actual care and costs will differ based on doctor's advice, age, condition severity, and other factors",
+    "Chart on page 2 referenced for limits on specific services and post-deductible costs, but not included in this chunk",
+    "Chart referenced on page 2 for coverage details after deductible is not included in this chunk",
+    "Coverage examples are not cost estimators and cannot be used to estimate actual costs",
+    "Coverage examples assume all services started and ended in same policy period",
+    "Coverage examples assume no other medical expenses for any member covered under the plan",
+    "Coverage examples assume patient's condition was not an excluded or preexisting condition",
+    "Coverage examples do not include premium costs",
+    "Deductible 'usually, but not always, starts over January 1st' - unclear when exactly deductible resets",
+    "Deductible reset timing is unclear: 'Check your policy to see when the deductible starts over (usually, but not always, January 1st)'",
+    "Excluded services are referenced but not listed in this chunk",
+    "Exclusions only referenced but not listed - unclear what specific services are not covered",
+    "Network details are not specified - only states to visit website for list",
+    "Network details not provided - unclear what constitutes 'in-network' vs 'out-of-network'",
+    "Note: All other rules are well-supported by direct quotes or clear data from the cost tables in the document.",
+    "Out-of-pocket limit excludes 'prescription drugs' but pharmacy has separate deductible - unclear if prescription drugs count toward any limit",
+    "Out-of-pocket limit exclusions include 'prescription drugs' but pharmacy deductible exists - unclear if prescription drugs count toward out-of-pocket limit after deductible",
+    "Premium is described as 'only an estimate' and 'actual premium may be higher' - unclear what factors determine final premium",
+    "Premium is described as 'only an estimate' but no information provided about what factors could cause increase or denial",
+    "Rule 15: 'If you need specialty drugs (e.g., chemotherapy) to treat your illness or condition' - The evidence shows 0% co-insurance for participating provider but leaves non-participating column blank. It's unclear if this means non-participating providers are not covered or if there's a different cost structure.",
+    "Rule 26: 'Using coverage examples to compare plans - Check the \"You Pay\" box for each example - smaller number indicates more coverage' - This rule appears to be inferred from general guidance about comparing plans, but the specific text about checking 'You Pay' box and smaller number indicating more coverage is not found in the provided document. The document only states coverage examples can be used to compare plans generally.",
+    "Rule 34: The evidence quote for comparing plans does not appear in the provided document text. The document cuts off mid-sentence on page 7, so this rule cannot be verified from the given text.",
+    "Rule 4: 'When using in-network providers - Plan will pay some or all costs of covered services' - The text says 'some or all' which is vague about exact coverage amounts, though specific percentages are provided in charts for various services.",
+    "Specific dollar amounts in coverage examples are based on national averages and not specific to geographic area or health plan",
+    "Terminology ambiguity: 'in-network, preferred, or participating' providers mentioned but relationship between these terms not explained",
+    "The 'After 8 visits, not covered' exception for mental/behavioral health outpatient services doesn't specify if this is per year, per condition, or lifetime",
+    "The 'Hospital service' listed under 'If you have a recovery or other special health need' is unclear - it may duplicate hospital stay coverage or refer to something else",
+    "The 'If your child needs dental or eye care' section doesn't specify age limits for what constitutes a 'child'",
+    "The 'Limitations & Exceptions' column shows 'none' for most services but doesn't specify if there are other limitations not listed",
+    "The 'Limitations & Exceptions' column shows 'none' for most services, but it's unclear if this means no limitations/exceptions or if limitations are described elsewhere",
+    "The 'Other Covered Services' list includes services but doesn't specify cost-sharing amounts or limitations",
+    "The 'Recovery or other special health need' services (home health care, rehabilitation, etc.) show 0%/40% co-insurance but no limitations/exceptions - unclear if there are visit limits or other restrictions",
+    "The 'child' reference for dental/eye care doesn't specify age limits or definition of 'child'",
+    "The 'coverage area' for termination of coverage is not defined",
+    "The 'limits or exclusions' category is not explained - what specific services are limited or excluded is unclear",
+    "The allowed amount calculation method is not detailed",
+    "The cost for specialty drugs with non-participating providers is not specified",
+    "The coverage termination triggers mention 'move outside the coverage area' but don't define what the coverage area is",
+    "The deductible amount is not specified in this chunk",
+    "The document states 'maternity is not covered' but doesn't specify if this applies to all maternity care or only normal delivery",
+    "The examples assume all care is from in-network providers, but out-of-network cost differences are not quantified",
+    "The examples assume patient's condition was not an excluded or preexisting condition, but exclusions are not defined",
+    "The excluded services list states 'This isn't a complete list' but doesn't indicate where to find the complete list",
+    "The excluded services list states 'This isn't a complete list. Check your policy for others' but doesn't indicate where to find the complete list",
+    "The grievance and appeals contacts have placeholder URLs ('www. Xxxxxxxxxxxxxx.com' and 'www. Xxxxxxxxxxxxxx.gov') that are incomplete",
+    "The grievance and appeals contacts have placeholder URLs (www. Xxxxxxxxxxxxxx.com and www. Xxxxxxxxxxxxxx.gov)",
+    "The other covered services list states 'This isn't a complete list. Check your policy for other covered services and your costs for these services' but doesn't specify costs for acupuncture, chiropractic care, or hearing aids",
+    "The phrase 'After 8 visits, not covered' for mental/behavioral health outpatient services doesn't specify if this is per policy period, calendar year, or lifetime",
+    "The phrase 'This plan may encourage you' suggests the lower costs for participating providers are not guaranteed",
+    "The phrase 'may encourage you' suggests the lower costs for participating providers might not be guaranteed in all cases",
+    "The relationship between premium costs and out-of-pocket costs is described as 'generally' but not specifically defined",
+    "The specific dollar amounts in coverage examples are based on national averages and not specific to geographic areas or health plans",
+    "The term 'may have to pay the difference' for balance billing suggests uncertainty rather than a definite rule",
+    "The term 'may have to pay' for balance billing suggests uncertainty about when this applies"
+  ],
+  "final_decision": {
+    "recommendation": "Needs Manual Review",
+    "reasoning_summary": "The query does not present a specific scenario or claim to evaluate against the verified rules. The provided rules describe various conditions and actions within the health insurance policy, but without a specific case to apply them to, no determination can be made.",
+    "confidence": 0.0,
+    "manual_review_needed": true,
+    "critic_passed": false
+  },
+  "critic_feedback": "FAIL - Manual review obviously required. The final decision incorrectly states that no determination can be made due to lack of a specific scenario, but the task was to review the verified rules, ambiguities, and final decision itself - not to evaluate a claim. The final decision shows fundamental misunderstanding of the task. Additionally, Rule 34 is marked as unsupported with confidence 0.0, indicating missing evidence that should trigger manual review. The confidence of 0.0 in the final decision is appropriate given the error, but the recommendation fails because manual review is clearly needed for the unsupported rule and the flawed final decision.",
+  "confidence": 0.0
+}

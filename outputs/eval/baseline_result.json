@@ -1,0 +1,398 @@
+{
+  "document_type": "health_insurance_policy",
+  "extracted_entities": {
+    "insurance_company": "Insurance Company 1",
+    "plan_name": "PPO Plan 1",
+    "policy_period": "1/1/2011 \u2013 12/31/2011",
+    "coverage_type": "Individual + Spouse",
+    "plan_type": "PPO",
+    "contact_phone": "1-800-XXX-XXXX",
+    "website": "www.insurancecompany.com",
+    "premium": "$481 monthly",
+    "overall_deductible": "$2,500 person / $7,500 family",
+    "pharmacy_deductible": "$300",
+    "out_of_pocket_limit": "$2,500 person / $7,500 family",
+    "excluded_services": [
+      "Bariatric surgery",
+      "Non-emergency care when traveling outside the U.S.",
+      "Cosmetic surgery",
+      "Dental care (Adult)",
+      "Infertility treatment",
+      "Long-term care",
+      "Private-duty nursing",
+      "Routine eye care (Adult)",
+      "Routine foot care",
+      "Routine hearing tests",
+      "Weight loss programs"
+    ],
+    "other_covered_services": [
+      "Acupuncture",
+      "Chiropractic care",
+      "Hearing aids"
+    ]
+  },
+  "extracted_rules": [
+    {
+      "condition": "Patient uses a participating provider for primary care visit to treat injury or illness",
+      "action": "Patient pays $35 co-pay per visit",
+      "exception": null,
+      "evidence": "Primary care visit to treat an injury or illness $35 co-pay/visit",
+      "page_number": 3,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a non-participating provider for primary care visit to treat injury or illness",
+      "action": "Patient pays 40% co-insurance",
+      "exception": null,
+      "evidence": "Primary care visit to treat an injury or illness ... 40% co-insurance",
+      "page_number": 3,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a participating provider for specialist visit",
+      "action": "Patient pays $50 co-pay per visit",
+      "exception": null,
+      "evidence": "Specialist visit $50 co-pay/visit",
+      "page_number": 3,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a non-participating provider for specialist visit",
+      "action": "Patient pays 40% co-insurance",
+      "exception": null,
+      "evidence": "Specialist visit ... 40% co-insurance",
+      "page_number": 3,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a participating provider for preventive care/screening/immunization",
+      "action": "Patient pays $0",
+      "exception": null,
+      "evidence": "Preventive care/screening/immunization $0",
+      "page_number": 3,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a non-participating provider for preventive care/screening/immunization",
+      "action": "Patient pays 40% co-insurance",
+      "exception": null,
+      "evidence": "Preventive care/screening/immunization ... 40% co-insurance",
+      "page_number": 3,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a participating provider for diagnostic test (x-ray, blood work)",
+      "action": "Patient pays 0% co-insurance",
+      "exception": null,
+      "evidence": "Diagnostic test (x-ray, blood work) 0% co-insurance",
+      "page_number": 3,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a non-participating provider for diagnostic test (x-ray, blood work)",
+      "action": "Patient pays 40% co-insurance",
+      "exception": null,
+      "evidence": "Diagnostic test (x-ray, blood work) ... 40% co-insurance",
+      "page_number": 3,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a participating provider for generic drugs (retail)",
+      "action": "Patient pays $10 co-pay",
+      "exception": "Covers up to a 30-day supply (retail prescription)",
+      "evidence": "Generic drugs $10 co-pay (retail); ... Covers up to a 30-day supply (retail prescription)",
+      "page_number": 3,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a non-participating provider for generic drugs",
+      "action": "Patient pays 40% co-insurance",
+      "exception": null,
+      "evidence": "Generic drugs ... 40% co-insurance",
+      "page_number": 3,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a participating provider for mental/behavioral health outpatient services",
+      "action": "Patient pays 0% co-insurance",
+      "exception": "After 8 visits, not covered",
+      "evidence": "Mental/Behavioral health outpatient services 0% co-insurance ... After 8 visits, not covered",
+      "page_number": 4,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a non-participating provider for mental/behavioral health outpatient services",
+      "action": "Patient pays 40% co-insurance",
+      "exception": "After 8 visits, not covered",
+      "evidence": "Mental/Behavioral health outpatient services ... 40% co-insurance ... After 8 visits, not covered",
+      "page_number": 4,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient needs prenatal and postnatal care",
+      "action": "Service is not covered",
+      "exception": null,
+      "evidence": "Prenatal and postnatal care Not Covered",
+      "page_number": 4,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient needs delivery and all inpatient services for pregnancy",
+      "action": "Service is not covered",
+      "exception": null,
+      "evidence": "Delivery and all inpatient services Not Covered",
+      "page_number": 4,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient needs eye exam",
+      "action": "Service is not covered",
+      "exception": null,
+      "evidence": "Eye exam Not Covered",
+      "page_number": 4,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient needs glasses",
+      "action": "Service is not covered",
+      "exception": null,
+      "evidence": "Glasses Not Covered",
+      "page_number": 4,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient needs dental check-up",
+      "action": "Service is not covered",
+      "exception": null,
+      "evidence": "Dental check-up Not Covered",
+      "page_number": 4,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient pays premium",
+      "action": "Patient can keep insurance coverage",
+      "exception": "If fraud committed, insurer stops offering services in state, or patient moves outside coverage area",
+      "evidence": "You can keep this insurance as long as you pay your premium unless one or more of the following happens: \u2022 you commit fraud \u2022 the insurer stops offering services in the state \u2022 you move outside the coverage area",
+      "page_number": 5,
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient has a grievance about health insurer or plan",
+      "action": "Patient has right to file written complaint",
+      "exception": null,
+      "evidence": "A grievance is a complaint you have about your health insurer or plan. You have the right to file a written complaint to express your dissatisfaction or denial of coverage for claims under this health insurance.",
+      "page_number": 5,
+      "confidence": 1.0
+    }
+  ],
+  "verified_rules": [
+    {
+      "condition": "Patient uses a participating provider for primary care visit to treat injury or illness",
+      "action": "Patient pays $35 co-pay per visit",
+      "exception": null,
+      "evidence": "Primary care visit to treat an injury or illness $35 co-pay/visit",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Directly stated in the cost table for participating providers",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a non-participating provider for primary care visit to treat injury or illness",
+      "action": "Patient pays 40% co-insurance",
+      "exception": null,
+      "evidence": "Primary care visit to treat an injury or illness ... 40% co-insurance",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Directly stated in the cost table for non-participating providers",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a participating provider for specialist visit",
+      "action": "Patient pays $50 co-pay per visit",
+      "exception": null,
+      "evidence": "Specialist visit $50 co-pay/visit",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Directly stated in the cost table for participating providers",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a non-participating provider for specialist visit",
+      "action": "Patient pays 40% co-insurance",
+      "exception": null,
+      "evidence": "Specialist visit ... 40% co-insurance",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Directly stated in the cost table for non-participating providers",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a participating provider for preventive care/screening/immunization",
+      "action": "Patient pays $0",
+      "exception": null,
+      "evidence": "Preventive care/screening/immunization $0",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Directly stated in the cost table for participating providers",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a non-participating provider for preventive care/screening/immunization",
+      "action": "Patient pays 40% co-insurance",
+      "exception": null,
+      "evidence": "Preventive care/screening/immunization ... 40% co-insurance",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Directly stated in the cost table for non-participating providers",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a participating provider for diagnostic test (x-ray, blood work)",
+      "action": "Patient pays 0% co-insurance",
+      "exception": null,
+      "evidence": "Diagnostic test (x-ray, blood work) 0% co-insurance",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Directly stated in the cost table for participating providers",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a non-participating provider for diagnostic test (x-ray, blood work)",
+      "action": "Patient pays 40% co-insurance",
+      "exception": null,
+      "evidence": "Diagnostic test (x-ray, blood work) ... 40% co-insurance",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Directly stated in the cost table for non-participating providers",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a participating provider for generic drugs (retail)",
+      "action": "Patient pays $10 co-pay",
+      "exception": "Covers up to a 30-day supply (retail prescription)",
+      "evidence": "Generic drugs $10 co-pay (retail); ... Covers up to a 30-day supply (retail prescription)",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Directly stated in the drug coverage section with specific limitation",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a non-participating provider for generic drugs",
+      "action": "Patient pays 40% co-insurance",
+      "exception": null,
+      "evidence": "Generic drugs ... 40% co-insurance",
+      "page_number": 3,
+      "supported": true,
+      "support_reason": "Directly stated in the cost table for non-participating providers",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a participating provider for mental/behavioral health outpatient services",
+      "action": "Patient pays 0% co-insurance",
+      "exception": "After 8 visits, not covered",
+      "evidence": "Mental/Behavioral health outpatient services 0% co-insurance ... After 8 visits, not covered",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Directly stated in the cost table with specific visit limitation",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient uses a non-participating provider for mental/behavioral health outpatient services",
+      "action": "Patient pays 40% co-insurance",
+      "exception": "After 8 visits, not covered",
+      "evidence": "Mental/Behavioral health outpatient services ... 40% co-insurance ... After 8 visits, not covered",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Directly stated in the cost table with specific visit limitation",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient needs prenatal and postnatal care",
+      "action": "Service is not covered",
+      "exception": null,
+      "evidence": "Prenatal and postnatal care Not Covered",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Directly stated as 'Not Covered' in the pregnancy section",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient needs delivery and all inpatient services for pregnancy",
+      "action": "Service is not covered",
+      "exception": null,
+      "evidence": "Delivery and all inpatient services Not Covered",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Directly stated as 'Not Covered' in the pregnancy section",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient needs eye exam",
+      "action": "Service is not covered",
+      "exception": null,
+      "evidence": "Eye exam Not Covered",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Directly stated as 'Not Covered' in the dental/eye care section",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient needs glasses",
+      "action": "Service is not covered",
+      "exception": null,
+      "evidence": "Glasses Not Covered",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Directly stated as 'Not Covered' in the dental/eye care section",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient needs dental check-up",
+      "action": "Service is not covered",
+      "exception": null,
+      "evidence": "Dental check-up Not Covered",
+      "page_number": 4,
+      "supported": true,
+      "support_reason": "Directly stated as 'Not Covered' in the dental/eye care section",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient pays premium",
+      "action": "Patient can keep insurance coverage",
+      "exception": "If fraud committed, insurer stops offering services in state, or patient moves outside coverage area",
+      "evidence": "You can keep this insurance as long as you pay your premium unless one or more of the following happens: \u2022 you commit fraud \u2022 the insurer stops offering services in the state \u2022 you move outside the coverage area",
+      "page_number": 5,
+      "supported": true,
+      "support_reason": "Directly stated in 'Your Rights to Continue Coverage' section",
+      "confidence": 1.0
+    },
+    {
+      "condition": "Patient has a grievance about health insurer or plan",
+      "action": "Patient has right to file written complaint",
+      "exception": null,
+      "evidence": "A grievance is a complaint you have about your health insurer or plan. You have the right to file a written complaint to express your dissatisfaction or denial of coverage for claims under this health insurance.",
+      "page_number": 5,
+      "supported": true,
+      "support_reason": "Directly stated in 'Your Grievance and Appeals Rights' section",
+      "confidence": 1.0
+    }
+  ],
+  "ambiguities": [
+    "The document states 'This is not a policy' and refers to a separate policy document for full details, creating uncertainty about completeness",
+    "Premium is described as 'only an estimate' that 'may be higher' or 'application may be denied' after review, creating uncertainty about final premium",
+    "Deductible start date is unclear: 'Check your policy to see when the deductible starts over (usually, but not always, January 1st)'",
+    "Out-of-pocket limit exclusions include 'prescription drugs' but drug coverage details show co-pays/co-insurance, creating potential confusion about what counts toward limit",
+    "Excluded services list states 'This isn't a complete list. Check your policy for others.' creating uncertainty about full scope of exclusions",
+    "Other covered services list states 'This isn't a complete list. Check your policy for other covered services' creating uncertainty about full scope of coverage",
+    "Coverage examples explicitly state they are 'not a cost estimator' and 'not for estimating actual costs', limiting their utility for precise cost prediction"
+  ],
+  "final_decision": {
+    "recommendation": "Pass",
+    "reasoning_summary": "All extracted rules are well-grounded in the source text with clear evidence citations. The document provides comprehensive coverage details, cost structures, and limitations. While there are noted ambiguities (common in insurance summaries), the extracted information is accurately supported by the provided text.",
+    "confidence": 0.95,
+    "manual_review_needed": false
+  },
+  "confidence": 0.95,
+  "critic_feedback": "",
+  "revision_count": 0
+}

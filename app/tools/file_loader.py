@@ -2,9 +2,6 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 
-from pypdf import PdfReader
-
-
 def normalize_text(text: str) -> str:
     lines = [line.strip() for line in text.splitlines()]
     return "\n".join(line for line in lines if line)
@@ -14,6 +11,8 @@ def load_pdf_file(file_path: str) -> Tuple[str, List[Dict[str, Any]]]:
     """
     Extract text from a PDF.
     """
+    from pypdf import PdfReader
+
     reader = PdfReader(file_path)
 
     pages: List[Dict[str, Any]] = []

@@ -1,7 +1,6 @@
 import os
 
 from dotenv import load_dotenv
-from langchain_ollama import ChatOllama
 
 load_dotenv(r"C:\Users\dayan\policy_to_action_agent\.env")
 

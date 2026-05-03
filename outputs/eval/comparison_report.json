@@ -1,0 +1,51 @@
+{
+  "input_path": "app/data/final-sbc-and-clfs-from-naic.pdf",
+  "scores": {
+    "multi_agent": {
+      "name": "multi_agent",
+      "schema_valid": true,
+      "error": null,
+      "runtime_seconds": 677.155,
+      "rules_extracted": 34,
+      "verified_rules": 34,
+      "supported_rules": 32,
+      "unsupported_rules": 2,
+      "support_rate": 0.9412,
+      "rules_with_evidence": 34,
+      "rules_with_page_number": 34,
+      "avg_verified_confidence": 0.8985,
+      "ambiguities": 56,
+      "manual_review_needed": true,
+      "final_recommendation": "Needs Manual Review"
+    },
+    "one_shot_baseline": {
+      "name": "one_shot_baseline",
+      "schema_valid": true,
+      "error": null,
+      "runtime_seconds": 130.052,
+      "rules_extracted": 19,
+      "verified_rules": 19,
+      "supported_rules": 19,
+      "unsupported_rules": 0,
+      "support_rate": 1.0,
+      "rules_with_evidence": 19,
+      "rules_with_page_number": 19,
+      "avg_verified_confidence": 1.0,
+      "ambiguities": 7,
+      "manual_review_needed": false,
+      "final_recommendation": "Pass"
+    }
+  },
+  "comparison": {
+    "rule_delta": 15,
+    "supported_rule_delta": 13,
+    "support_rate_delta": -0.0588,
+    "evidence_delta": 15,
+    "observations": [
+      "Multi-agent extracted 15 more rules than the one-shot baseline.",
+      "Multi-agent produced 13 more supported verified rules.",
+      "Multi-agent attached evidence to 15 more rules.",
+      "Support-rate delta: -5.88% in favor of multi-agent when positive."
+    ]
+  }
+}

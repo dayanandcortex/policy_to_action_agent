@@ -47,3 +47,12 @@ class FinalDecisionOutput(BaseModel):
 class CriticOutput(BaseModel):
     passed: bool
     feedback: str
+
+
+class OneShotAnalysisOutput(BaseModel):
+    document_type: str
+    extracted_entities: Dict[str, EntityValue]
+    extracted_rules: List[ExtractedRule]
+    verified_rules: List[VerifiedRule]
+    ambiguities: List[str]
+    final_decision: FinalDecisionOutput

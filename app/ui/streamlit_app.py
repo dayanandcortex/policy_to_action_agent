@@ -72,6 +72,9 @@ if uploaded_file is not None:
             st.subheader("Critic Feedback")
             st.write(result["critic_feedback"])
 
+        st.subheader("Extracted Rules")
+        st.json(result["extracted_rules"])
+
         st.subheader("Verified Rules")
         st.json(result["verified_rules"])
 
@@ -79,6 +82,7 @@ if uploaded_file is not None:
             {
                 "document_type": result["document_type"],
                 "extracted_entities": result["extracted_entities"],
+                "extracted_rules": result["extracted_rules"],
                 "verified_rules": result["verified_rules"],
                 "ambiguities": result["ambiguities"],
                 "final_decision": result["final_decision"],
